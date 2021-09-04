@@ -1,6 +1,5 @@
-game.Players.PlayerAdded:Connect(function(plr)
-    local character = plr.Character or plr.CharacterAdded:Wait()
-        end)
+repeat wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer:FindFirstChild("__LOADED")
     
     
    
@@ -67,7 +66,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         return formatted
       end
     --==================================================================
-    wait(10)
+    
     
     
     _G.trackD = 'Diamonds'
@@ -87,7 +86,6 @@ game.Players.PlayerAdded:Connect(function(plr)
     local goldhell = f / 3150000000
     local hell = f / 350000000
     local Enchant = d / 10000
-    local rainbow = hell / 36
         local start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
         local startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
         local startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
@@ -176,11 +174,6 @@ game.Players.PlayerAdded:Connect(function(plr)
                     {
                         ["name"] = "__Enchant Purchases__",
                         ["value"] = (comma_value(round(Enchant))),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "__Estimate of rainbows from current fantasy coins amount__",
-                        ["value"] = (comma_value(round(rainbow))),
                         ["inline"] = false
                     },
                     {
