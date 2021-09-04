@@ -1,6 +1,5 @@
-game.Players.PlayerAdded:Connect(function(plr)
-    local character = plr.Character or plr.CharacterAdded:Wait()
-        end)
+repeat wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer:FindFirstChild("__LOADED")
     
     
    
