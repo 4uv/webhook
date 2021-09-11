@@ -77,22 +77,26 @@ local function current()
     f  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
 end
 local function buy()
-    local goldhell = f / 11000000000
-    local hell = f / 350000000
-    local Enchant = d / 10000
-    local rainbow = hell / 36
+    goldhell = f / 11000000000
+    hell = f / 350000000
+    Enchant = d / 10000
+    rainbow = hell / 36
 end
 local function start()
-    local start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-    local startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
-    local startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+    start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
+    startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
+    startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
 end
     local function ends()
-    local ennd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-    local enndD = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
-    local enndC = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+    ennd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
+    enndD = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
+    enndC = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
 end
-
+   local function dif()
+    dif = tonumber(ennd) - tonumber(start)
+    difd = tonumber(enndD) - tonumber(startd)
+    difc = tonumber(enndC) - tonumber(startc)
+end
     _G.trackD = 'Diamonds'
     _G.trackC = 'Coins'
     _G.Tracking = 'Fantasy Coins' 
@@ -116,9 +120,6 @@ end
         
         ends()
         
-        local dif = tonumber(ennd) - tonumber(start)
-        local difd = tonumber(enndD) - tonumber(startd)
-        local difc = tonumber(enndC) - tonumber(startc)
         if _G.g then
             print("set _G.g to false!")
         else
