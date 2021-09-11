@@ -94,7 +94,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         if _G.g then
             print("set _G.g to false!")
         else
-            print("Sending weebhook in 60 secs....")
+            print("Sending webhook in 60 secs....")
         end
 
         wait(60)
