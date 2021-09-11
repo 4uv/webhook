@@ -84,7 +84,7 @@ game.Players.PlayerAdded:Connect(function(plr)
     local r  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
     local c  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
     local f  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-    local goldhell = f / 3150000000
+    local goldhell = f / 11000000000
     local hell = f / 350000000
     local Enchant = d / 10000
     local rainbow = hell / 36
@@ -169,7 +169,7 @@ game.Players.PlayerAdded:Connect(function(plr)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Golden Empyerean Egg__",
+                        ["name"] = "__Pog Egg__",
                         ["value"] = (comma_value(round(goldhell))),
                         ["inline"] = false
                     },
