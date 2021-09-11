@@ -1,5 +1,4 @@
-repeat wait()
-until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer:FindFirstChild("__LOADED")
+game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
     
     
    
