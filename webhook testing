@@ -69,6 +69,29 @@ game.Players.PlayerAdded:Connect(function(plr)
     --==================================================================
     wait(10)
 
+local function current()
+    username = game:GetService("Players").LocalPlayer.Name
+    d  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
+    r  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
+    c  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
+    f  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
+end
+local function buy()
+    local goldhell = f / 11000000000
+    local hell = f / 350000000
+    local Enchant = d / 10000
+    local rainbow = hell / 36
+end
+local function start()
+    local start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
+    local startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
+    local startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+end
+    local function ends()
+    local ennd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
+    local enndD = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
+    local enndC = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+end
 
     _G.trackD = 'Diamonds'
     _G.trackC = 'Coins'
@@ -79,18 +102,10 @@ game.Players.PlayerAdded:Connect(function(plr)
 
 
     while not _G.stop do
-    local username = game:GetService("Players").LocalPlayer.Name
-    local d  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
-    local r  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
-    local c  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
-    local f  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-    local goldhell = f / 11000000000
-    local hell = f / 350000000
-    local Enchant = d / 10000
-    local rainbow = hell / 36
-        local start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-        local startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
-        local startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+        current()
+        buy()
+        start()
+    
         if _G.g then
             print("set _G.g to false!")
         else
@@ -98,10 +113,9 @@ game.Players.PlayerAdded:Connect(function(plr)
         end
 
         wait(60)
-
-        local ennd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-        local enndD = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
-        local enndC = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+        
+        ends()
+        
         local dif = tonumber(ennd) - tonumber(start)
         local difd = tonumber(enndD) - tonumber(startd)
         local difc = tonumber(enndC) - tonumber(startc)
