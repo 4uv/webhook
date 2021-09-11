@@ -120,18 +120,14 @@ end
         
         ends()
         
+        _G.Table = _G.Table + 1
+
         if _G.g then
             print("set _G.g to false!")
         else
             print("WebHook Sent! If no webhook was sent you did something wrong. Script made by foro#8122")
         end
         table.insert(_G.Tables, dif)
-
-
-        local b = 0
-        for i,v in pairs(_G.Tables) do
-            b = b + v
-        end
 
         if _G.g then
             print("set _G.g to false!")
