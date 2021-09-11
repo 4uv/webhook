@@ -1,12 +1,14 @@
-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-    
-    
-   
-    
+game.Players.PlayerAdded:Connect(function(plr)
+    local character = plr.Character or plr.CharacterAdded:Wait()
+        end)
+
+
+
+
     -- there is now a 10 second wait before script starts tracking your stats (1 time thing at the start)
     -- use f9 to see when the script is starting to track stats
-    
-    
+
+
     --================================================================== number formating from http://lua-users.org/wiki/FormattingNumbers
     function comma_value(amount)
         local formatted = amount
@@ -18,8 +20,8 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         end
         return formatted
       end
-      
-      
+
+
       function round(val, decimal)
         if (decimal) then
           return math.floor( (val * 10^decimal) + 0.5) / (10^decimal)
@@ -27,33 +29,33 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
           return math.floor(val+0.5)
         end
       end
-      
-      
+
+
       function format_num(amount, decimal, prefix, neg_prefix)
         local str_amount,  formatted, famount, remain
-      
+
         decimal = decimal or 2  
         neg_prefix = neg_prefix or "-" 
-      
+
         famount = math.abs(round(amount,decimal))
         famount = math.floor(famount)
-      
+
         remain = round(math.abs(amount) - famount, decimal)
-      
-              
+
+
         formatted = comma_value(famount)
-      
-              
+
+
         if (decimal > 0) then
           remain = string.sub(tostring(remain),3)
           formatted = formatted .. "." .. remain ..
                       string.rep("0", decimal - string.len(remain))
         end
-      
-              
+
+
         formatted = (prefix or "") .. formatted 
-      
-              
+
+
         if (amount<0) then
           if (neg_prefix=="()") then
             formatted = "("..formatted ..")"
@@ -61,30 +63,31 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
             formatted = neg_prefix .. formatted 
           end
         end
-      
+
         return formatted
       end
     --==================================================================
-    
-    
-    
+    wait(10)
+
+
     _G.trackD = 'Diamonds'
     _G.trackC = 'Coins'
     _G.Tracking = 'Fantasy Coins' 
     _G.g = false 
     _G.Tables = {}
-    
-    
-    
+
+
+
     while not _G.stop do
     local username = game:GetService("Players").LocalPlayer.Name
     local d  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
     local r  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
     local c  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
     local f  = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
-    local goldhell = f / 3150000000
+    local goldhell = f / 11000000000
     local hell = f / 350000000
     local Enchant = d / 10000
+    local rainbow = hell / 36
         local start = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
         local startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
         local startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
@@ -93,9 +96,9 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         else
             print("Sending weebhook in 60 secs....")
         end
-    
+
         wait(60)
-    
+
         local ennd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
         local enndD = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
         local enndC = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
@@ -108,13 +111,13 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
             print("WebHook Sent! If no webhook was sent you did something wrong. Script made by foro#8122")
         end
         table.insert(_G.Tables, dif)
-    
-        
+
+
         local b = 0
         for i,v in pairs(_G.Tables) do
             b = b + v
         end
-        
+
         if _G.g then
             print("set _G.g to false!")
         else
@@ -124,9 +127,9 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
        KRNL_LOADED and "k" or
        SONA_LOADED and "s" or
        "e"
-    
+
     local url = webhook
-       
+
     local data = {
        ["content"] = "",
             ["embeds"] = {{
@@ -166,13 +169,18 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Golden Empyerean Egg__",
+                        ["name"] = "__Pog Egg__",
                         ["value"] = (comma_value(round(goldhell))),
                         ["inline"] = false
                     },
                     {
                         ["name"] = "__Enchant Purchases__",
                         ["value"] = (comma_value(round(Enchant))),
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "__Estimate of rainbows from current fantasy coins amount__",
+                        ["value"] = (comma_value(round(rainbow))),
                         ["inline"] = false
                     },
                     {
@@ -199,7 +207,7 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
             }}
         }
     local newdata = game:GetService("HttpService"):JSONEncode(data)
-    
+
     local headers = {
        ["content-type"] = "application/json"
     }
