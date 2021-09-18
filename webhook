@@ -114,22 +114,22 @@ game.Players.PlayerAdded:Connect(function(plr)
                     },
                     {
                         ["name"] = "__Tech Coins__",
-                        ["value"] = ("%s"):format(comma_Value(tech)),
+                        ["value"] = ("%s"):format(comma_Value(endT)),
                         ["inline"] = false
                     },
                     {
                         ["name"] = "__Coins__",
-                        ["value"] = ("%s"):format(comma_Value(coin)),
+                        ["value"] = ("%s"):format(comma_Value(endc)),
                         ["inline"] = false
                     },
                     {
                         ["name"] = "__Fantasy Coins__",
-                        ["value"] = ("%s"):format(comma_Value(fantasyc)),
+                        ["value"] = ("%s"):format(comma_Value(endfc)),
                         ["inline"] = false
                     },
                     {
                         ["name"] = "__Diamonds__",
-                        ["value"] = ("%s"):format(comma_Value(diamondc)),
+                        ["value"] = ("%s"):format(comma_Value(endd)),
                         ["inline"] = false
                     },
                     {
