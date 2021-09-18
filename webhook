@@ -54,8 +54,8 @@ game.Players.PlayerAdded:Connect(function(plr)
             diamondc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
             fantasyc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Fantasy Coins"].Amount.Text, ",", "")
             tech = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Tech Coins"].Amount.Text, ",", "")
-            costofegg2 = tech / egg2
-            costofegg = tech / egg1
+            costofegg2 = tech / egg1
+            costofegg = tech / egg2
             enchants = diamondc / 10000
             rainbow = costofegg / 36
             rank = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
