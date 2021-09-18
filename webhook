@@ -5,12 +5,14 @@ game.Players.PlayerAdded:Connect(function(plr)
         _G.Tracking = 'Fantasy Coins' 
         _G.trackD = 'Diamonds'
         _G.trackC = 'Coins'
+        _G.trackT = 'Tech Coins'
 
         local waitTime = 60
         local currentTime = 0
         local startc; local endc; local coin; local difc; local tablec = {};
         local startd; local endd; local diamondc; local difd; local tabled = {};
         local startfc; local endfc; local fantasyc; local diffc; local tablefc = {};
+        local startT; local endT; local tech; local dift; local tablet = {};
         
         local function add(table)
             local value = 0
@@ -31,7 +33,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         end
         local username = game:GetService("Players").LocalPlayer.Name
         local egg1 = 350000000 
-        local egg2 = 11000000000 
+        local egg2 = 115000 
 
  
         
@@ -39,18 +41,21 @@ game.Players.PlayerAdded:Connect(function(plr)
             startfc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
             startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
             startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+            startT = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackT].Amount.Text, ",", "")
         end
         local function ending()
             endfc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
             endd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
             endc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
+            endT = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackT].Amount.Text, ",", "")
         end
         local function initialvalue()
             coin = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
             diamondc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
             fantasyc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Fantasy Coins"].Amount.Text, ",", "")
-            costofegg2 = fantasyc / egg2
-            costofegg = fantasyc / egg1
+            tech = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Tech Coins"].Amount.Text, ",", "")
+            costofegg2 = tech / egg2
+            costofegg = tech / egg1
             enchants = diamondc / 10000
             rainbow = costofegg / 36
             rank = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
@@ -59,10 +64,12 @@ game.Players.PlayerAdded:Connect(function(plr)
             diffc = tonumber(endfc) - tonumber(startfc)
             difd = tonumber(endd) - tonumber(startd)
             difc = tonumber(endc) - tonumber(startc)
-        
+            dift = tonumber(endT) - tonumber(startT) 
+
             table.insert(tablec, difc)
             table.insert(tabled, difd)
             table.insert(tablefc, diffc)
+            table.insert(tablet, dift)
         end
 
         while not _G.stop do
@@ -106,6 +113,11 @@ game.Players.PlayerAdded:Connect(function(plr)
                         ["inline"] = false
                     },
                     {
+                        ["name"] = "__Tech Coins__",
+                        ["value"] = ("%s"):format(comma_Value(tech)),
+                        ["inline"] = false
+                    },
+                    {
                         ["name"] = "__Coins__",
                         ["value"] = ("%s"):format(comma_Value(coin)),
                         ["inline"] = false
@@ -121,12 +133,12 @@ game.Players.PlayerAdded:Connect(function(plr)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Empyrean Egg__",
+                        ["name"] = "__Dark Tech Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg))),
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Pog Egg__",
+                        ["name"] = "__Golden Dark Tech Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg2))),
                         ["inline"] = false
                     },
@@ -138,6 +150,28 @@ game.Players.PlayerAdded:Connect(function(plr)
                     {
                         ["name"] = "__Estimate of rainbows from current fantasy coins amount__",
                         ["value"] = comma_Value(math.round(rainbow)),
+                        ["inline"] = false
+                    }
+                },
+            },
+            {
+                ["title"] = "__**Tech Coins**__",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00008B),
+                ["fields"] = {
+                    {
+                        ["name"] = "__Tech Coins Earned In The Last Minute__",
+                        ["value"] = comma_Value(dift),
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = ("__Total Tech Coins This %s Minute Session __"):format(math.round(currentTime/60)),
+                        ["value"] = comma_Value(add(tablet)),
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "__Average Tech Coins Per Minute__",
+                        ["value"] = comma_Value(math.round(add(tablet) / math.round(currentTime/60))),
                         ["inline"] = false
                     }
                 },
