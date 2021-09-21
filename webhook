@@ -32,7 +32,7 @@ game.Players.PlayerAdded:Connect(function(plr)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 10350000 
+        local egg1 = 1035000
         local egg2 = 115000 
 
  
