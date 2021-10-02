@@ -32,8 +32,8 @@ game.Players.PlayerAdded:Connect(function(plr)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 1035000
-        local egg2 = 115000 
+        local egg1 = 14850000
+        local egg2 = 1650000 
 
  
         
@@ -133,12 +133,12 @@ game.Players.PlayerAdded:Connect(function(plr)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Dark Tech Egg__",
+                        ["name"] = "__Mechanical Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg))),
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Golden Dark Tech Egg__",
+                        ["name"] = "__Golden Mechanical Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg2))),
                         ["inline"] = false
                     },
