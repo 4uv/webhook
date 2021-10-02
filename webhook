@@ -57,7 +57,6 @@ game.Players.PlayerAdded:Connect(function(plr)
             costofegg2 = tech / egg1
             costofegg = tech / egg2
             enchants = diamondc / 10000
-            rainbow = costofegg / 36
             rank = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
         end
         local function dif()
@@ -145,11 +144,6 @@ game.Players.PlayerAdded:Connect(function(plr)
                     {
                         ["name"] = "__Enchant Purchases__",
                         ["value"] = ("%s"):format(comma_Value(math.round(enchants))),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "__Estimate of rainbows from current fantasy coins amount__",
-                        ["value"] = comma_Value(math.round(rainbow)),
                         ["inline"] = false
                     }
                 },
