@@ -1,6 +1,7 @@
 if game.PlaceId == 6284583030 then
     repeat wait() until game.Players.LocalPlayer.Character["HumanoidRootPart"]
     repeat wait() until game.Players.LocalPlayer.Character
+    end
        
         local webhookcheck =
         is_sirhurt_closure and "s" or pebc_execute and "p" or syn and "s" or
