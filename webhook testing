@@ -1,9 +1,5 @@
 if game.PlaceId == 6284583030 then
-    repeat wait() until game:GetService("Players")
-    repeat wait() until game:GetService("Players").LocalPlayer
-    repeat wait() until game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Loading"):WaitForChild("Black").BackgroundTransparency == 1
-    repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-    end
+    
        
         local webhookcheck =
         is_sirhurt_closure and "s" or pebc_execute and "p" or syn and "s" or
