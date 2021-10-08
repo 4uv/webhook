@@ -1,7 +1,37 @@
-game.Players.PlayerAdded:Connect(function(plr)
-    local character = plr.Character or plr.CharacterAdded:Wait()
-        end)
+if game.PlaceId == 6284583030 then
+    repeat wait() until game.Players.LocalPlayer.Character["HumanoidRootPart"]
+    repeat wait() until game.Players.LocalPlayer.Character
        
+        local webhookcheck =
+        is_sirhurt_closure and "s" or pebc_execute and "p" or syn and "s" or
+        secure_load and "s" or
+        KRNL_LOADED and "k" or
+        SONA_LOADED and "s" or
+        "e"
+ 
+     local url = webhook
+ 
+     local data = {
+        ["content"] = "",
+             ["embeds"] = {{
+                 ["title"] = "__**Pet Simulator X Stat Tracker**__",
+                 ["description"] = "Sending first webhook in 60 seconds...", 
+                 ["type"] = "rich",
+                 ["color"] = tonumber(0x0E980E),
+                },
+            }
+        
+    }
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+    
+
         _G.Tracking = 'Fantasy Coins' 
         _G.trackD = 'Diamonds'
         _G.trackC = 'Coins'
