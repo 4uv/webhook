@@ -1,3 +1,4 @@
+
 game.Players.PlayerAdded:Connect(function(plr)
     local character = plr.Character or plr.CharacterAdded:Wait()
         end)
@@ -62,8 +63,8 @@ request(abcdef)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 14850000
-        local egg2 = 1650000 
+        local egg1 = 113000000
+        local egg2 = 12500000 
 
  
         
@@ -162,12 +163,12 @@ request(abcdef)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Mechanical Egg__",
+                        ["name"] = "__Chemical Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg))),
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Golden Mechanical Egg__",
+                        ["name"] = "__Golden Chemical Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg2))),
                         ["inline"] = false
                     },
@@ -178,6 +179,28 @@ request(abcdef)
                     }
                 },
             },
+            {
+                ["title"] = "__**Diamonds**__",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x0096FF),
+                ["fields"] = {
+                    {
+                        ["name"] = "__Diamonds Earned In The Last Minute__",
+                        ["value"] = comma_Value(difd),
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = ("__Total Diamonds This %s Minute Session__"):format(math.round(currentTime/60)),
+                        ["value"] = comma_Value(add(tabled)),
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "__Average Diamonds Per Minute__",
+                        ["value"] = comma_Value(math.round(add(tabled) / math.round(currentTime/60))),
+                        ["inline"] = false
+                    }
+                },
+            }, 
             {
                 ["title"] = "__**Tech Coins**__",
                 ["type"] = "rich",
@@ -240,28 +263,6 @@ request(abcdef)
                     {
                         ["name"] = "__Average Coins Per Minute__",
                         ["value"] = comma_Value(math.round(add(tablec) / math.round(currentTime/60))),
-                        ["inline"] = false
-                    }
-                },
-            },
-            {
-                ["title"] = "__**Diamonds**__",
-                ["type"] = "rich",
-                ["color"] = tonumber(0x0096FF),
-                ["fields"] = {
-                    {
-                        ["name"] = "__Diamonds Earned In The Last Minute__",
-                        ["value"] = comma_Value(difd),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = ("__Total Diamonds This %s Minute Session__"):format(math.round(currentTime/60)),
-                        ["value"] = comma_Value(add(tabled)),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "__Average Diamonds Per Minute__",
-                        ["value"] = comma_Value(math.round(add(tabled) / math.round(currentTime/60))),
                         ["inline"] = false
                     },
                 }
