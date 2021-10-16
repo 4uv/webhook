@@ -63,7 +63,7 @@ request(abcdef)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 113000000
+        local egg1 = 112500000
         local egg2 = 12500000 
 
  
