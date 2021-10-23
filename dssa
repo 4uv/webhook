@@ -197,7 +197,7 @@ request(abcdef)
                 ["color"] = tonumber(0x663399),
                 ["fields"] = {
                     {
-                        ["name"] = "Halloween Candy Earned In The Last Minute__",
+                        ["name"] = "__Halloween Candy Earned In The Last Minute__",
                         ["value"] = comma_Value(difh),
                         ["inline"] = false
                     },
