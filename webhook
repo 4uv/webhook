@@ -65,8 +65,8 @@ request(abcdef)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 120000
-        local egg2 = 750000
+        local egg1 = 2970000000
+        local egg2 = 330000000
 
  
         
@@ -90,8 +90,8 @@ request(abcdef)
             fantasyc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Fantasy Coins"].Amount.Text, ",", "")
             tech = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Tech Coins"].Amount.Text, ",", "")
            
-            costofegg2 = candy / egg1
-            costofegg = candy / egg2
+            costofegg2 = tech / egg1
+            costofegg = tech / egg2
             enchants = diamondc / 10000
             rank = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
         end
@@ -170,12 +170,12 @@ request(abcdef)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Cursed Egg__",
+                        ["name"] = "__Planet Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg))),
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Eerie Egg__",
+                        ["name"] = "__Golden Planet Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg2))),
                         ["inline"] = false
                     },
